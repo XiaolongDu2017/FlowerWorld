@@ -1,0 +1,506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LangVersion>4</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{27791997-B0DC-919F-FF87-F26968A3BB47}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>.</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_2_14;UNITY_2018_2;UNITY_2018;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;ENABLE_RUNTIME_GI;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_NETWORK;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_IOS_NATIVE_CRASH_REPORTING;PLAYERCONNECTION_LISTENS_FIXED_PORT;DEBUGGER_LISTENS_FIXED_PORT;PLATFORM_SUPPORTS_ADS_ID;SUPPORT_ENVIRONMENT_VARIABLES;PLATFORM_SUPPORTS_PROFILER;PLATFORM_HAS_NO_SUPPORT_FOR_BUCKET_ALLOCATOR;STRICTCPP_NEW_DELETE_SIGNATURES;HAS_NEON_SKINNING;UNITY_GFX_USE_PLATFORM_VSYNC;UNITY_INPUT_SIMULATE_EVENTS;PLATFORM_ALWAYS_USES_STDOUT_FOR_LOG;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;PLATFORM_IOS;UNITY_IOS;PLATFORM_IPHONE;UNITY_IPHONE;UNITY_IPHONE_API;SUPPORT_MULTIPLE_DISPLAYS;ENABLE_VR;ENABLE_AR;ENABLE_SPATIALTRACKING;ENABLE_IL2CPP;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE;ENABLE_IOS_ON_DEMAND_RESOURCES;ENABLE_IOS_APP_SLICING;UNITY_HAS_GOOGLEVR;ENABLE_MONO</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoConfig>true</NoConfig>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
+    <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Plugins\CSV2Table\Demo\C2TDemo.cs" />
+     <Compile Include="Assets\Plugins\CSV2Table\Demo\SampleTable.cs" />
+     <Compile Include="Assets\Plugins\CSV2Table\Scripts\CsvParser.cs" />
+     <Compile Include="Assets\Plugins\CSV2Table\Scripts\CsvParser2.cs" />
+     <Compile Include="Assets\Plugins\CSV2Table\Scripts\TableCodeGen.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanAddForce.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanCameraMove.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanCameraMoveSmooth.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanCameraZoom.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanCameraZoomSmooth.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanDestroy.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanFingerDown.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanFingerDrag.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanFingerHeld.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanFingerLine.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanFingerSet.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanFingerSwipe.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanFingerTap.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanFingerTrail.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanFingerUp.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanMultiTap.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanMultiTapInfo.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanOpenUrl.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanPitchYaw.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanPitchYawSmooth.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanRotate.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanScale.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanSelect.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanSelectableBehaviour.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanSelectableGraphicColor.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanSelectableRendererColor.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanSelectableSpriteRendererColor.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanSpawn.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanTouchEvents.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanTranslate.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanTranslateSmooth.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Scripts\LeanFinger.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Scripts\LeanGesture.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Scripts\LeanSelectable.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Scripts\LeanSnapshot.cs" />
+     <Compile Include="Assets\Plugins\LeanTouch\Scripts\LeanTouch.cs" />
+     <Compile Include="Assets\Plugins\LeanTween\Basic\LeanAudio.cs" />
+     <Compile Include="Assets\Plugins\LeanTween\Basic\LeanTest.cs" />
+     <Compile Include="Assets\Plugins\LeanTween\Basic\LeanTween.cs" />
+     <Compile Include="Assets\Plugins\LeanTween\Basic\LTDescr.cs" />
+     <Compile Include="Assets\Plugins\LeanTween\Basic\LTDescrOptional.cs" />
+     <Compile Include="Assets\Plugins\LeanTween\Basic\LTSeq.cs" />
+     <Compile Include="Assets\Plugins\LeanTween\Path\LeanTweenPath.cs" />
+     <Compile Include="Assets\Plugins\LeanTween\Path\LeanTweenPathControl.cs" />
+     <Compile Include="Assets\Plugins\LeanTween\Visual\LeanTweenVisual.cs" />
+     <Compile Include="Assets\Plugins\LeanTween\Visual\LTVisualShared.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\command\api\CommandExceptionType.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\command\api\CommandKeys.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\command\api\ICommand.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\command\api\ICommandBinder.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\command\api\ICommandBinding.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\command\api\IPooledCommandBinder.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\command\impl\Command.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\command\impl\CommandBinder.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\command\impl\CommandBinding.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\command\impl\CommandException.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\command\impl\EventCommand.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\command\impl\EventCommandBinder.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\command\impl\SignalCommandBinder.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\context\api\ContextEvent.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\context\api\ContextExceptionType.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\context\api\ContextKeys.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\context\api\ContextStartupFlags.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\context\api\IContext.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\context\api\IContextView.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\context\api\ICrossContextCapable.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\context\impl\Context.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\context\impl\ContextException.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\context\impl\ContextView.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\context\impl\CrossContext.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\context\impl\CrossContextBridge.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\context\impl\MVCSContext.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\dispatcher\api\DispatcherExceptionType.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\dispatcher\api\IDispatcher.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\dispatcher\api\ITriggerable.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\dispatcher\api\ITriggerProvider.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\dispatcher\eventdispatcher\api\EventCallbackType.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\dispatcher\eventdispatcher\api\EventDispatcherExceptionType.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\dispatcher\eventdispatcher\api\IEvent.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\dispatcher\eventdispatcher\api\IEventBinding.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\dispatcher\eventdispatcher\api\IEventDispatcher.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\dispatcher\eventdispatcher\impl\EventBinding.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\dispatcher\eventdispatcher\impl\EventDispatcher.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\dispatcher\eventdispatcher\impl\EventDispatcherException.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\dispatcher\eventdispatcher\impl\TmEvent.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\dispatcher\impl\DispatcherException.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\implicitBind\api\IImplicitBinder.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\implicitBind\impl\ImplicitBinder.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\implicitBind\ImplementorAttribute.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\injector\api\ICrossContextInjectionBinder.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\injector\api\IInjectionBinder.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\injector\api\IInjectionBinding.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\injector\api\IInjector.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\injector\api\IInjectorFactory.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\injector\api\InjectionBindingScope.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\injector\api\InjectionBindingType.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\injector\api\InjectionExceptionType.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\injector\impl\CrossContextInjectionBinder.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\injector\impl\InjectionBinder.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\injector\impl\InjectionBinding.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\injector\impl\InjectionException.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\injector\impl\Injector.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\injector\impl\InjectorFactory.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\injector\InjectAttribute.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\mediation\api\IMediationBinder.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\mediation\api\IMediationBinding.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\mediation\api\IMediator.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\mediation\api\IView.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\mediation\api\MediationEvent.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\mediation\api\MediationExceptionType.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\mediation\impl\AbstractMediationBinder.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\mediation\impl\EventMediator.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\mediation\impl\EventView.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\mediation\impl\MediationBinder.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\mediation\impl\MediationBinding.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\mediation\impl\MediationException.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\mediation\impl\Mediator.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\mediation\impl\View.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\mediation\ListensTo.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\mediation\SignalMediationBinder.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\pool\api\IPool.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\pool\api\IPoolable.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\pool\api\PoolExceptionType.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\pool\api\PoolInflationType.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\pool\api\PoolOverflowBehavior.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\pool\impl\Pool.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\pool\impl\PoolException.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\promise\api\IPromise.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\promise\impl\BasePromise.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\promise\impl\Promise.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\reflector\api\IReflectedClass.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\reflector\api\IReflectionBinder.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\reflector\api\ReflectionExceptionType.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\reflector\impl\ReflectedClass.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\reflector\impl\ReflectionBinder.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\reflector\impl\ReflectionException.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\sequencer\api\ISequenceBinding.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\sequencer\api\ISequenceCommand.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\sequencer\api\ISequencer.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\sequencer\api\SequencerExceptionType.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\sequencer\impl\EventSequenceCommand.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\sequencer\impl\EventSequencer.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\sequencer\impl\SequenceBinding.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\sequencer\impl\SequenceCommand.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\sequencer\impl\Sequencer.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\sequencer\impl\SequencerException.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\signal\api\IBaseSignal.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\signal\api\SignalExceptionType.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\signal\impl\BaseSignal.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\signal\impl\Signal.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\signal\impl\SignalException.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\framework\api\BinderExceptionType.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\framework\api\BindingConst.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\framework\api\BindingConstraintType.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\framework\api\IBinder.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\framework\api\IBinding.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\framework\api\IInstanceProvider.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\framework\api\IManagedList.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\framework\api\ISemiBinding.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\framework\impl\Binder.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\framework\impl\BinderException.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\framework\impl\Binding.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\framework\impl\SemiBinding.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\lib\MiniJSON.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\scripts\strange\ReadMe.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\Test\CubeMediator.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\Test\CubeView.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\Test\DEMO\Demo1CommandEvent.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\Test\DEMO\Demo1ContextView.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\Test\DEMO\Demo1MVCSContext.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\Test\IScoreService.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\Test\RequestScoreCommand.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\Test\ScoreModel.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\Test\ScoreService.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\Test\StartCommand.cs" />
+     <Compile Include="Assets\Plugins\StrangeIoC\Test\UpdateScoreCommand.cs" />
+     <Compile Include="Assets\Plugins\UnityLitJson\Extensions.cs" />
+     <Compile Include="Assets\Plugins\UnityLitJson\IJsonWrapper.cs" />
+     <Compile Include="Assets\Plugins\UnityLitJson\JsonAttribute.cs" />
+     <Compile Include="Assets\Plugins\UnityLitJson\JsonData.cs" />
+     <Compile Include="Assets\Plugins\UnityLitJson\JsonException.cs" />
+     <Compile Include="Assets\Plugins\UnityLitJson\JsonMapper.cs" />
+     <Compile Include="Assets\Plugins\UnityLitJson\JsonMockWrapper.cs" />
+     <Compile Include="Assets\Plugins\UnityLitJson\JsonReader.cs" />
+     <Compile Include="Assets\Plugins\UnityLitJson\JsonWriter.cs" />
+     <Compile Include="Assets\Plugins\UnityLitJson\Lexer.cs" />
+     <Compile Include="Assets\Plugins\UnityLitJson\ParserToken.cs" />
+     <Compile Include="Assets\Plugins\UnityLitJson\Platform.cs" />
+     <Compile Include="Assets\Plugins\UnityLitJson\Unity\UnityTypeBindings.cs" />
+     <None Include="Assets\Plugins\LeanTouch\Examples\Fonts\OFL.txt" />
+     <None Include="Assets\Plugins\StrangeIoC\scripts\strange\extensions\ReadMe.txt" />
+     <None Include="Assets\Plugins\LeanTouch\Examples\Shaders\Skybox.shader" />
+     <None Include="Assets\Plugins\LeanTouch\Examples\Shaders\Smooth.shader" />
+     <None Include="Assets\Plugins\StrangeIoC\LICENSE-2.0.txt" />
+     <None Include="Assets\Plugins\StrangeIoC\README.txt" />
+ <Reference Include="UnityEditor.StandardEvents">
+ <HintPath>/Users/liuyimeng/Desktop/Project/FlowerWorld/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro.Editor">
+ <HintPath>/Users/liuyimeng/Desktop/Project/FlowerWorld/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.PackageManagerUI.Editor">
+ <HintPath>/Users/liuyimeng/Desktop/Project/FlowerWorld/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro">
+ <HintPath>/Users/liuyimeng/Desktop/Project/FlowerWorld/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AIModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ARModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ARModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AccessibilityModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AnimationModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AnimationModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AssetBundleModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AudioModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AudioModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.BaselibModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.BaselibModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ClothModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ClothModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.CloudWebServicesModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.CloudWebServicesModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.CoreModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.CrashReportingModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.DirectorModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.DirectorModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.FacebookModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.FacebookModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.FileSystemHttpModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.FileSystemHttpModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.GameCenterModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.GameCenterModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.GridModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.GridModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HotReloadModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.HotReloadModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.IMGUIModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.IMGUIModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ImageConversionModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.InputModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.InputModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.JSONSerializeModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.LocalizationModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.LocalizationModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ParticleSystemModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ParticlesLegacyModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ParticlesLegacyModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.PerformanceReportingModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.PhysicsModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.PhysicsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Physics2DModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.Physics2DModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ProfilerModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ProfilerModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ScreenCaptureModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SharedInternalsModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SpatialTrackingModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SpatialTrackingModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SpriteMaskModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SpriteShapeModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.StreamingModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.StreamingModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.StyleSheetsModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.StyleSheetsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SubstanceModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SubstanceModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TLSModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TLSModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TerrainModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TerrainModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TerrainPhysicsModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TextRenderingModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TilemapModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TilemapModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TimelineModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TimelineModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UIModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UIModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UIElementsModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UIElementsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UNETModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UNETModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UmbraModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UmbraModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityAnalyticsModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityConnectModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityWebRequestModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VRModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.VRModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VehiclesModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.VehiclesModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VideoModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.VideoModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.WindModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.WindModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.XRModule">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Locator">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/Unity.Locator.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Timeline">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.GoogleAudioSpatializer">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HoloLens">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SpatialTracking">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>/Users/liuyimeng/Library/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.StandardEvents">
+ <HintPath>/Users/liuyimeng/Library/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+ </Reference>
+ <Reference Include="mscorlib">
+ <HintPath>/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
+ </Reference>
+ <Reference Include="System">
+ <HintPath>/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/System.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Core">
+ <HintPath>/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/System.Core.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Runtime.Serialization">
+ <HintPath>/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/System.Runtime.Serialization.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Xml">
+ <HintPath>/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/System.Xml.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Xml.Linq">
+ <HintPath>/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/System.Xml.Linq.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityScript">
+ <HintPath>/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/UnityScript.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityScript.Lang">
+ <HintPath>/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/UnityScript.Lang.dll</HintPath>
+ </Reference>
+ <Reference Include="Boo.Lang">
+ <HintPath>/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/Boo.Lang.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
