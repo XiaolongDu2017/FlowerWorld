@@ -56,5 +56,8 @@ public class BagPopupControl : MonoBehaviour {
 		seed.transform.position = new Vector3(-2.482f, 1.37f, 0);
 		seed.GetComponent<FlowerControl>().InitFlowerData();
 
+		PlayerPrefs.SetInt("hasFlower", 1);
+		PlayerPrefs.SetString("flowerGenerateTime", System.DateTime.Now.ToString());
+
 	}
 }

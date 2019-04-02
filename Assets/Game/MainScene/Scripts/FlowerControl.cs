@@ -25,10 +25,42 @@ public class FlowerControl : MonoBehaviour {
 		timeText.transform.localScale = Vector3.one;
 		flowerStates[0].SetActive(true);
 
-		nextStateDataTime = System.DateTime.Now.AddSeconds(5);
+		nextStateDataTime = System.DateTime.Now.AddSeconds(10);
 		isCanShowTime = true;
+	
 	}
 
+
+	public void InitFlowerState(string dateTime)
+	{
+
+		timeText = Instantiate(Resources.Load("TimeText") as GameObject);
+		timeText.transform.SetParent(GameObject.Find("Middle").transform);
+		timeText.transform.localPosition = new Vector3(0, -410, 0);
+		timeText.transform.localScale = Vector3.one;
+
+		System.DateTime time = System.DateTime.Parse(dateTime);
+		System.TimeSpan pSpan = System.DateTime.Now -time ;
+		double seconds = pSpan.TotalSeconds;
+		nextStateDataTime = time.AddSeconds(10);
+		while (seconds > 10)
+		{
+			seconds = seconds - 10;
+			stageIndex++;
+			nextStateDataTime = time.AddSeconds(10);
+		}
+		if (stageIndex >= (flowerStates.Length - 1))
+		{
+			flowerStates[flowerStates.Length - 1].SetActive(true);
+			isCanShowTime = false;
+			timeText.SetActive(false);
+		}
+		else
+		{
+			isCanShowTime = true;
+			flowerStates[stageIndex].SetActive(true);
+		}
+	}
 
 	void Update()
 	{
@@ -64,7 +96,7 @@ public class FlowerControl : MonoBehaviour {
 		}
 
 
-		nextStateDataTime = System.DateTime.Now.AddSeconds(5);
+		nextStateDataTime = System.DateTime.Now.AddSeconds(10);
 	}
 
 }
