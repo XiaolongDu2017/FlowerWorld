@@ -21,7 +21,7 @@ public class FlowerControl : MonoBehaviour {
 		}
 		timeText = Instantiate(Resources.Load("TimeText") as GameObject);
 		timeText.transform.SetParent(GameObject.Find("Middle").transform);
-		timeText.transform.localPosition = new Vector3(0, -340, 0);
+		timeText.transform.localPosition = new Vector3(0, -410, 0);
 		timeText.transform.localScale = Vector3.one;
 		flowerStates[0].SetActive(true);
 

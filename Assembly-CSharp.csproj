@@ -80,6 +80,10 @@
      <Compile Include="Assets\TinyFramework\UIFramework\Scene\GemeApplication.cs" />
      <Compile Include="Assets\TinyFramework\UIFramework\Scene\InitSceneManager.cs" />
      <Compile Include="Assets\TinyFramework\UIFramework\Scene\SceneController.cs" />
+     <None Include="Assets\LightmapShader\Shader\T4M 4 Textures.shader" />
+     <None Include="Assets\LightmapShader\Shader\lightmap_t4m.shader" />
+     <None Include="Assets\LightmapShader\Shader\lightmap_02.shader" />
+     <None Include="Assets\Other\LightmapShader\Shader\lightmap_02.shader" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>/Users/liuyimeng/Desktop/Project/FlowerWorld/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>

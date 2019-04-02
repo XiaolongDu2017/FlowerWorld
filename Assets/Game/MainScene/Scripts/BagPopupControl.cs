@@ -53,7 +53,7 @@ public class BagPopupControl : MonoBehaviour {
 		this.gameObject.SetActive(false);
 		GameObject seed = Instantiate(Resources.Load("Flower01") as GameObject);
 		seed.transform.SetParent(seedParent.transform);
-		seed.transform.position = new Vector3(0, 0.62f, 0);
+		seed.transform.position = new Vector3(-2.482f, 1.37f, 0);
 		seed.GetComponent<FlowerControl>().InitFlowerData();
 
 	}

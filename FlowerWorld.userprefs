@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{5A25DB27-C0E3-2D1E-8002-FBBEE51B3BF1}|Unit Tests">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game/MainScene/Scripts/MainGameSceneManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game/MainScene/Scripts/FlowerControl.cs">
     <Files>
-      <File FileName="Assets/Game/MainScene/Scripts/FlowerControl.cs" Line="1" Column="1" />
+      <File FileName="Assets/Game/MainScene/Scripts/FlowerControl.cs" Line="57" Column="4" />
       <File FileName="Assets/Game/MainScene/Scripts/MainGameSceneManager.cs" Line="26" Column="4" />
       <File FileName="Assets/Game/MainScene/Scripts/BagItemControl.cs" Line="8" Column="2" />
       <File FileName="Assets/Game/MainScene/Scripts/BagPopupControl.cs" Line="57" Column="55" NotebookId="1" />
@@ -12,5 +12,6 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-Editor PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-Editor-firstpass PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>
