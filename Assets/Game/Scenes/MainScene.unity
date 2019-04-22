@@ -622,6 +622,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4890485044862688, guid: 450bd54dd370d4ef0b2bfb0ab7c78cb5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 450bd54dd370d4ef0b2bfb0ab7c78cb5, type: 2}
   m_IsPrefabAsset: 0
