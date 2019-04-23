@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 442}
   m_MaxSize: {x: 22012, y: 10021}
   vertical: 0
-  controlID: 48
+  controlID: 2205
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 442}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 49
+  controlID: 2206
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -180,14 +180,14 @@ MonoBehaviour:
     height: 465
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 28.17474218050692
+  lastFramingTime: 3147.4200580111496
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2.4248977, y: 1.2186751, z: -0.8487079}
+    m_Target: {x: -5.7701616, y: 0.32691288, z: -3.7226083}
     speed: 2
-    m_Value: {x: -2.4248977, y: 1.2186751, z: -0.8487079}
+    m_Value: {x: -5.7701616, y: 0.32691288, z: -3.7226083}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -215,13 +215,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.101521716, y: 0.73827666, z: -0.11408371, w: -0.65698236}
+    m_Target: {x: -0.032798637, y: 0.9148887, z: -0.075940356, w: -0.3951406}
     speed: 2
-    m_Value: {x: -0.101521716, y: 0.73827666, z: -0.11408371, w: -0.65698236}
+    m_Value: {x: -0.032798637, y: 0.9148887, z: -0.075940356, w: -0.3951406}
   m_Size:
-    m_Target: 2.8351364
+    m_Target: 11.423528
     speed: 2
-    m_Value: 2.8351364
+    m_Value: 11.423528
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -310,9 +310,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 04f9ffff
-    m_LastClickedID: -1788
-    m_ExpandedIDs: befbffffc8fbffffe2fbffffe4fbffff0000000082160000c216000014170000
+    m_SelectedIDs: ea160000
+    m_LastClickedID: 5866
+    m_ExpandedIDs: 80e2ffffbefbffffe4fbffff000000008216000090160000a2160000c2160000e616000014170000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -398,19 +398,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Game/MainScene/Scripts
+    - Assets/Game/MainScene/3D/Scene/Materials/Materials
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Game/MainScene/Scripts
+  - Assets/Game/MainScene/3D/Scene/Materials/Materials
   m_LastFoldersGridSize: -1
   m_LastProjectPath: G:\project\Plant Empire
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 280d0000
-    m_LastClickedID: 3368
+    m_SelectedIDs: ea0c0000
+    m_LastClickedID: 3306
     m_ExpandedIDs: 000000000a070000100c00001e0d0000280d0000440e00005a0e00004e0f0000aa0f0000b60f0000bc0f0000d00f00004c1000008c1000009c100000ac100000221100008a110000a0110000c2110000401400009214000094140000e214000054150000cc3a0000ce3a0000d03a0000d23a0000d43a0000d63a0000d83a0000da3a0000dc3a0000de3a0000e03a0000e23a0000e43a0000e63a0000e83a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -464,10 +464,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 04f9ffff
-    m_LastClickedInstanceID: -1788
+    m_SelectedInstanceIDs: ea160000
+    m_LastClickedInstanceID: 5866
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: 6c420000b8410000
+    m_ExpandedInstanceIDs: 6c420000b841000004150000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

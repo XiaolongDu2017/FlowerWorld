@@ -6,9 +6,17 @@ ModelImporter:
     100000: feed_indoor
     100002: feed_outdoor
     100004: //RootNode
+    100006: fangzi_003
+    100008: fangzi_004
+    100010: feed_indoor001
+    100012: feed_outdoor001
     400000: feed_indoor
     400002: feed_outdoor
     400004: //RootNode
+    400006: fangzi_003
+    400008: fangzi_004
+    400010: feed_indoor001
+    400012: feed_outdoor001
     2100000: feed_007
     2100002: feed_008
     2100004: feed_010
@@ -16,12 +24,33 @@ ModelImporter:
     2100008: feed_015
     2100010: feed_001
     2100012: feed_002
+    2100014: _fangzi03___Default
+    2100016: _fangzi_fangzi03___Default
+    2100018: _huafangfeed_007
+    2100020: _huafangfeed_008
+    2100022: _huafangfeed_010
+    2100024: _huafangfeed_012
+    2100026: _huafangfeed_015
+    2100028: _huafangfeed_001
+    2100030: _huafangfeed_002
     2300000: feed_indoor
     2300002: feed_outdoor
+    2300004: fangzi_003
+    2300006: fangzi_004
+    2300008: feed_indoor001
+    2300010: feed_outdoor001
     3300000: feed_indoor
     3300002: feed_outdoor
+    3300004: fangzi_003
+    3300006: fangzi_004
+    3300008: feed_indoor001
+    3300010: feed_outdoor001
     4300000: feed_indoor
     4300002: feed_outdoor
+    4300004: fangzi_003
+    4300006: fangzi_004
+    4300008: feed_indoor001
+    4300010: feed_outdoor001
   externalObjects: {}
   materials:
     importMaterials: 1
