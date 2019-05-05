@@ -433,7 +433,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &204293838
 Transform:
   m_ObjectHideFlags: 0
@@ -1642,6 +1642,48 @@ MonoBehaviour:
   m_ButtonKey: 
   pressScale: 1.1
   handleClick: 1
+--- !u!1001 &1833585710
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4432194296482618, guid: 6b383936a0d3b784d9a9873ebb8045ac, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4432194296482618, guid: 6b383936a0d3b784d9a9873ebb8045ac, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4432194296482618, guid: 6b383936a0d3b784d9a9873ebb8045ac, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4432194296482618, guid: 6b383936a0d3b784d9a9873ebb8045ac, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4432194296482618, guid: 6b383936a0d3b784d9a9873ebb8045ac, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4432194296482618, guid: 6b383936a0d3b784d9a9873ebb8045ac, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4432194296482618, guid: 6b383936a0d3b784d9a9873ebb8045ac, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4432194296482618, guid: 6b383936a0d3b784d9a9873ebb8045ac, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6b383936a0d3b784d9a9873ebb8045ac, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1920221858
 GameObject:
   m_ObjectHideFlags: 0
