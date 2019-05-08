@@ -1,0 +1,210 @@
+fileFormatVersion: 2
+guid: e2be667dd5fbb3745827d8dcc0837022
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bone039
+    100002: Bone040
+    100004: Bone041
+    100006: Bone042
+    100008: Bone043
+    100010: Bone044
+    100012: Bone045
+    100014: Bone047
+    100016: Bone048
+    100018: Bone049
+    100020: Bone051
+    100022: Bone052
+    100024: Bone053
+    100026: Bone055
+    100028: Bone056
+    100030: Bone057
+    100032: Bone059
+    100034: Bone060
+    100036: Bone061
+    100038: Bone063
+    100040: Bone065
+    100042: Bone067
+    100044: Bone069
+    100046: Bone071
+    100048: Bone073
+    100050: Bone076
+    100052: Bone077
+    100054: Bone079
+    100056: Bone081
+    100058: Bone083
+    100060: Bone085
+    100062: Bone087
+    100064: Bone089
+    100066: Bone091
+    100068: Bone093
+    100070: Bone095
+    100072: Bone097
+    100074: Bone099
+    100076: Bone101
+    100078: Bone103
+    100080: Bone105
+    100082: Bone107
+    100084: Bone109
+    100086: Bone111
+    100088: Bone113
+    100090: Bone115
+    100092: Bone117
+    100094: Bone119
+    100096: Bone121
+    100098: Bone123
+    100100: Bone125
+    100102: Bone127
+    100104: Bone129
+    100106: Bone131
+    100108: Bone133
+    100110: Bone135
+    100112: Bone137
+    100114: //RootNode
+    100116: Carnation_004
+    400000: Bone039
+    400002: Bone040
+    400004: Bone041
+    400006: Bone042
+    400008: Bone043
+    400010: Bone044
+    400012: Bone045
+    400014: Bone047
+    400016: Bone048
+    400018: Bone049
+    400020: Bone051
+    400022: Bone052
+    400024: Bone053
+    400026: Bone055
+    400028: Bone056
+    400030: Bone057
+    400032: Bone059
+    400034: Bone060
+    400036: Bone061
+    400038: Bone063
+    400040: Bone065
+    400042: Bone067
+    400044: Bone069
+    400046: Bone071
+    400048: Bone073
+    400050: Bone076
+    400052: Bone077
+    400054: Bone079
+    400056: Bone081
+    400058: Bone083
+    400060: Bone085
+    400062: Bone087
+    400064: Bone089
+    400066: Bone091
+    400068: Bone093
+    400070: Bone095
+    400072: Bone097
+    400074: Bone099
+    400076: Bone101
+    400078: Bone103
+    400080: Bone105
+    400082: Bone107
+    400084: Bone109
+    400086: Bone111
+    400088: Bone113
+    400090: Bone115
+    400092: Bone117
+    400094: Bone119
+    400096: Bone121
+    400098: Bone123
+    400100: Bone125
+    400102: Bone127
+    400104: Bone129
+    400106: Bone131
+    400108: Bone133
+    400110: Bone135
+    400112: Bone137
+    400114: //RootNode
+    400116: Carnation_004
+    2100000: 03 - Default
+    4300000: Carnation_004
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Carnation_004
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.001
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
