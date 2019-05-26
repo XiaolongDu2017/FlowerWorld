@@ -15,7 +15,12 @@ namespace Game
             base.Start();
 
             m_GameData = GameData.Instance;
-            
+            OnStateChangeHander();
+
+            if (m_GameData.FlowerState == FlowerState.Empty)
+            {
+                OnClickStore();
+            }
         }
 
         protected override void AddListeners()
