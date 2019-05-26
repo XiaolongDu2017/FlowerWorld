@@ -7,8 +7,11 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Game/Scenes/Init.unity
-    guid: c45cd2ac407e44a8784da65340d0be1f
+    guid: 894efb07aba3746a78a7b67eaa1dc28e
   - enabled: 1
-    path: Assets/Game/Scenes/Start.unity
+    path: Assets/Game/Scenes/MainScene.unity
     guid: 4e1203d329d7a4aa0b91cd130757bfe8
+  - enabled: 1
+    path: Assets/Game/Scenes/ArrangeFlower.unity
+    guid: e6636fd879add44bbb02ecca6fa41548
   m_configObjects: {}
