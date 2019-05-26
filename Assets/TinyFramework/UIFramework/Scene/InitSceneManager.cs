@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class InitSceneManager : MonoBehaviour
 {
     // Use this for initialization
     [SerializeField] private GameObject m_SystemRoot;
-    [SerializeField] private String m_NextScene;
+    [SerializeField] private string m_NextScene;
 
     void Start()
     {
