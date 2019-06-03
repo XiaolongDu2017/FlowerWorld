@@ -117,8 +117,8 @@ ModelImporter:
     - serializedVersion: 16
       name: level_05
       takeName: Take 001
-      firstFrame: 0
-      lastFrame: 51
+      firstFrame: 53
+      lastFrame: 83
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

@@ -20,6 +20,7 @@ public class StorePopup : PopupViewBase
 
     private void OnClickItem()
     {
+        GameData.Instance.Gold -= 50;
         GameData.Instance.FlowerState = FlowerState.Seed;
         EventManager.Instance.DispatchEvent(EventType.FlowerStateChange);
         
