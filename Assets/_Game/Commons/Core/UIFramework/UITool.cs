@@ -107,5 +107,21 @@ namespace Game
         }
 
         #endregion
+        public static Vector3 GetScreenToUIWorldPos(Vector3 ScreenPos)
+        {
+            var temp = GameObject.FindWithTag("MainCamera");
+            if (temp == null)
+                return Vector3.zero;
+            Vector3 worldPos = temp.GetComponent<Camera>().ScreenToWorldPoint(ScreenPos);
+            return worldPos;
+        }
+        public static Vector3 GetUIToScreenPos(Vector3 WorldPosition)
+        {
+            var temp = GameObject.FindWithTag("MainCamera");
+            if (temp == null)
+                return Vector3.zero;
+            Vector3 pScreenPos = temp.GetComponent<Camera>().WorldToScreenPoint(WorldPosition);
+            return pScreenPos;
+        }
     }
 }

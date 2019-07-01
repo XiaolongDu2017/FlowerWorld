@@ -16,5 +16,7 @@
 
 
         FlowerStateChange = 3,
+
+        ArrangeButtonClick = 4,
     }
 }
