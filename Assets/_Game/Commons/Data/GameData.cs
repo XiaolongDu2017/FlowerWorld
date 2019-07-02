@@ -5,7 +5,7 @@ namespace Game
 {
     public class GameData
     {
-        public const int PreStateSec = 30;
+        public const int PreStateSec = 300;
         
         private static GameData m_Instance;
 

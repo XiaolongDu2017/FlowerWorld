@@ -21,7 +21,7 @@ namespace Game
         protected override void Start()
         {
             base.Start();
-
+			uiText.text = "+" + addVaule;
             m_GameData = GameData.Instance;
             OnStateChangeHander();
 
@@ -127,6 +127,7 @@ namespace Game
 			}
 			else
 			{
+				
 				AddGold();
 			}
 		}
@@ -147,11 +148,10 @@ namespace Game
 				//Debug.LogError("22");
 				uiText.gameObject.SetActive(true);
 				uiText.gameObject.GetComponent<CanvasGroup>().alpha = 1;
-				uiText.transform.localPosition = new Vector3(336f, -120f, 0);
-				LeanTween.moveLocalY(uiText.gameObject, 120, 1f);
+				uiText.transform.localPosition = new Vector3(36f, -350f, 0);
+				LeanTween.moveLocalY(uiText.gameObject, 94, 1f);
 				LeanTween.alphaCanvas(uiText.gameObject.GetComponent<CanvasGroup>(), 0, 1f).setOnComplete(() => { 
-					m_GameData.Gold++;
-					m_TextGold.text = m_GameData.Gold.ToString();
+					 m_GameData.NextTime = m_GameData.NextTime.AddSeconds(addVaule*-1);
 				});
 			}
 
@@ -184,20 +184,22 @@ namespace Game
 
 
 		private float intervalTime = 1;
+		public int addVaule = 5;
 		private void AddGold()
 		{
 			if (m_GameData.FlowerState == FlowerState.Empty)
 				return;
+			if (m_GameData.FlowerState == FlowerState.Ripe)
+				return;
 			GameObject tempText = Instantiate(uiText.gameObject) as GameObject;
 			tempText.transform.SetParent(uiText.transform.parent);
 			tempText.transform.localScale = Vector3.one;
-			tempText.transform.localPosition = new Vector3(336f, -120f, 0);
+			tempText.transform.localPosition = new Vector3(36f, -350f, 0);
 			tempText.gameObject.GetComponent<CanvasGroup>().alpha = 1;
 			tempText.gameObject.SetActive(true);
-			LeanTween.moveLocalY(tempText.gameObject, 120, 1f);
+			LeanTween.moveLocalY(tempText.gameObject, 94, 1f);
 			LeanTween.alphaCanvas(tempText.gameObject.GetComponent<CanvasGroup>(), 0, 1f).setOnComplete(() => {
-				m_GameData.Gold++;
-				m_TextGold.text =  m_GameData.Gold.ToString();
+				m_GameData.NextTime = m_GameData.NextTime.AddSeconds(addVaule * -1);
 				Destroy(tempText);
 			});
 
