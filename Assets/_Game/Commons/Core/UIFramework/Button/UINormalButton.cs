@@ -118,8 +118,9 @@ namespace Game
 
         protected virtual void OnClick()
         {
-            if (string.IsNullOrEmpty(ButtonKey))
+            if (!string.IsNullOrEmpty(ButtonKey))
                 EventManager.Instance.DispatchEvent(EventType.CommonBtnClick, this);
+            Debug.LogError("ButtonKey: "+ ButtonKey);
         }
 
         #endregion
