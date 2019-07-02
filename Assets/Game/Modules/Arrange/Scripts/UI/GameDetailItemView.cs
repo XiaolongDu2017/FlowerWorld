@@ -6,15 +6,17 @@ using UnityEngine.UI;
 
 public class GameDetailItemView : ViewBase {
 
-    private const string PrefabsPath = "Prefab/GameDetailOperateItem";
+    //private const string PrefabsPath = "Prefab/GameDetailOperateItem";
     #region Init
 
     [SerializeField]
     private Image m_ContentImage;
     [SerializeField]
     private GameObject btnScale, btnClose, Frame;
+    [SerializeField]
+    private bool m_IsCanScale = true;
 
-    public static GameDetailItemView Create(string path, Transform parent)
+    public static GameDetailItemView Create(string path, Transform parent,string PrefabsPath)
     {
         GameDetailItemView view = Instantiate(Resources.Load<GameDetailItemView>(PrefabsPath), parent);
         view.init(path);
@@ -61,6 +63,9 @@ public class GameDetailItemView : ViewBase {
         }
         get { return m_IsSelected; }
     }
+    public void ChangeIcon(string path) { 
+    
+    }
 
     #endregion
 
@@ -103,12 +108,14 @@ public class GameDetailItemView : ViewBase {
     {
         Vector3 scalePos = btnScale.transform.localPosition;
         Debug.LogError("scalePos.magnitude: "+ scalePos.magnitude);
-        float len = scalePos.magnitude / 1.414f*2;
+        if (m_IsCanScale) {
+            float len = scalePos.magnitude / 1.414f*2;
 
-        Vector3 size = new Vector2(len, len);
-        m_FrameRectTrans.SetSize(size);
-        m_ContentRectTrans.SetSize(size);
-        btnClose.transform.localPosition = new Vector3(-scalePos.x, -scalePos.y, 0);
+            Vector3 size = new Vector2(len, len);
+            m_FrameRectTrans.SetSize(size);
+            m_ContentRectTrans.SetSize(size);
+            btnClose.transform.localPosition = new Vector3(-scalePos.x, -scalePos.y, 0);
+        }
 
         float angleZ = VectorAngle(new Vector2(50, -50), new Vector2(scalePos.x, scalePos.y));
         m_ContentImage.transform.localEulerAngles = new Vector3(0, 0, -angleZ);

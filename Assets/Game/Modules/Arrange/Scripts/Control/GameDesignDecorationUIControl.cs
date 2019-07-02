@@ -13,7 +13,7 @@ public class GameDesignDecorationUIControl : ViewBase {
     [SerializeField]
     private Image m_FlowerImage;
     [SerializeField]
-    private Image m_TextImage;
+    private Transform m_TextParent;
     [SerializeField]
     private Transform m_DetailsParent;
     protected override void AddListeners()
@@ -50,17 +50,25 @@ public class GameDesignDecorationUIControl : ViewBase {
         m_FlowerImage.SetNativeSize();
 
     }
+    private GameTextItemView _TextItem;
     public void SetTextImage(string path)
     {
-        if (!m_TextImage.gameObject.activeSelf) m_TextImage.gameObject.SetActive(true);
-        m_TextImage.sprite = Resources.Load<Sprite>(path);
-        m_TextImage.SetNativeSize();
-
+        if (!m_TextParent.gameObject.activeSelf) m_TextParent.gameObject.SetActive(true);
+        //m_TextParent.sprite = Resources.Load<Sprite>(path);
+        //m_TextParent.SetNativeSize();
+        if (_TextItem == null) {
+            _TextItem = GameTextItemView.Create(path, m_TextParent, TextPrefabsPath);
+            _TextItem.transform.localPosition = GetRandomStickerPostion();
+        }
+        else {
+            _TextItem.Init(path);
+        }
     }
-
+    private const string PrefabsPath = "Prefab/GameDetailOperateItem";
+    private const string TextPrefabsPath = "Prefab/GameTextItem";
     public void AddDetails(string path)
     {
-        GameDetailItemView itemView = GameDetailItemView.Create(path, m_DetailsParent);
+        GameDetailItemView itemView = GameDetailItemView.Create(path, m_DetailsParent,PrefabsPath);
         itemView.transform.localPosition = GetRandomStickerPostion();
         itemView.UpdateScale();
     }
