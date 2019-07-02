@@ -16,6 +16,8 @@ namespace Game
 
         private GameObject m_CurProp;
 
+		public Text uiText;
+
         protected override void Start()
         {
             base.Start();
@@ -113,15 +115,49 @@ namespace Game
             OnStateChangeHander();
         }
 
+		public void OnClickFlower()
+		{
+			if (m_GameData.FlowerState == FlowerState.Ripe)
+			{
+				m_GameData.FlowerState = FlowerState.Empty;
+				for (int i = 0; i < m_FlowerStates.Length; i++)
+				{
+					m_FlowerStates[i].SetActive(false);
+				}
+			}
+			else
+			{
+				AddGold();
+			}
+		}
+
         public override bool HandleBackButtonPress()
         {
             BackButtonService.Instace.DefaultBackButtonAction();
             return false;
         }
 
+
         private void Update()
         {
+			if (!uiText.gameObject.activeSelf || uiText.gameObject.GetComponent<CanvasGroup>().alpha <= 0)
+			{
+				if (m_GameData.FlowerState == FlowerState.Empty)
+					return;
+				//Debug.LogError("22");
+				uiText.gameObject.SetActive(true);
+				uiText.gameObject.GetComponent<CanvasGroup>().alpha = 1;
+				uiText.transform.localPosition = new Vector3(336f, -120f, 0);
+				LeanTween.moveLocalY(uiText.gameObject, 120, 1f);
+				LeanTween.alphaCanvas(uiText.gameObject.GetComponent<CanvasGroup>(), 0, 1f).setOnComplete(() => { 
+					m_GameData.Gold++;
+					m_TextGold.text = m_GameData.Gold.ToString();
+				});
+			}
+
             if (!m_TimeRoot.activeSelf) return;
+
+		
 
             var timeSpan = m_GameData.NextTime - DateTime.Now;
             var curVal = 1 - (float) timeSpan.TotalSeconds / GameData.PreStateSec;
@@ -145,5 +181,26 @@ namespace Game
                 }
             }
         }
+
+
+		private float intervalTime = 1;
+		private void AddGold()
+		{
+			if (m_GameData.FlowerState == FlowerState.Empty)
+				return;
+			GameObject tempText = Instantiate(uiText.gameObject) as GameObject;
+			tempText.transform.SetParent(uiText.transform.parent);
+			tempText.transform.localScale = Vector3.one;
+			tempText.transform.localPosition = new Vector3(336f, -120f, 0);
+			tempText.gameObject.GetComponent<CanvasGroup>().alpha = 1;
+			tempText.gameObject.SetActive(true);
+			LeanTween.moveLocalY(tempText.gameObject, 120, 1f);
+			LeanTween.alphaCanvas(tempText.gameObject.GetComponent<CanvasGroup>(), 0, 1f).setOnComplete(() => {
+				m_GameData.Gold++;
+				m_TextGold.text =  m_GameData.Gold.ToString();
+				Destroy(tempText);
+			});
+
+		}
     }
 }
