@@ -25,6 +25,7 @@ public class GameFlyerDesignItemData
     public string m_Id;
     public string m_IconPath;
     public string m_ItemPath;
+    public int m_Index;
 }
 public enum CategoryState { 
     None = 0,
@@ -33,5 +34,10 @@ public enum CategoryState {
     Flower = 3,
     Text = 4,
     Detail = 5, 
+}
+
+public class ConstName {
+public const string FlyerDesignPhotoConst = "flyerDesign_preview{0:D2}.png";
+
 }
 

@@ -42,7 +42,9 @@ namespace Game
             return false;
         }
 
-      
+        public void OnClickhare() {
+            Debug.LogError("Share");
+        }
 
         private void InitUI() {
             InitItems(GameDesignData.Instance.FlyerDesignCategoryDatas[0]);

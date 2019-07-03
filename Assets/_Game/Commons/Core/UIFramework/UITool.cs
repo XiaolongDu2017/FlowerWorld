@@ -123,5 +123,46 @@ namespace Game
             Vector3 pScreenPos = temp.GetComponent<Camera>().WorldToScreenPoint(WorldPosition);
             return pScreenPos;
         }
+
+
+        /// <summary>
+        /// 如果只取局部区域的话，建议用这个截屏方法 - dht
+        /// </summary>
+        /// <returns>The camera.</returns>
+        /// <param name="rect">Rect.</param>
+        /// <param name="cameras">Cameras.</param>
+        public static Texture2D CaptureCameras(Rect rect, params Camera[] cameras)
+        {
+            RenderTexture rt = new RenderTexture((int)Screen.width, (int)Screen.height, 24);
+            //临时设置相关相机的targetTexture为rt, 并手动渲染相关相机
+            for (int i = 0; i < cameras.Length; i++)
+            {
+                if (cameras[i] != null)
+                {
+                    cameras[i].targetTexture = rt;
+                    cameras[i].Render();
+                }
+            }
+
+            //激活这个rt, 并从中中读取像素。
+            RenderTexture.active = rt;
+            Texture2D screenShot = new Texture2D((int)rect.width, (int)rect.height, TextureFormat.RGB24, false);
+            screenShot.ReadPixels(rect, 0, 0);   //注：这个时候，它是从RenderTexture.active中读取像素
+            screenShot.Apply();
+
+            //重置相关参数，以使用camera继续在屏幕上显示
+            for (int i = 0; i < cameras.Length; i++)
+            {
+                if (cameras[i] != null)
+                    cameras[i].targetTexture = null;
+            }
+            RenderTexture.active = null;
+            rt.Release();
+            GameObject.Destroy(rt);
+            rt = null;
+
+            return screenShot;
+        }
+
     }
 }

@@ -31,16 +31,17 @@ public class GameDesignData {
             return m_DetailItems;
         }
     }
+   
     private void InitCategoryData()
     {
         m_FlyerDesignCategorys = new List<GameFlyerDesignCategoryData>();
-
+        
         GameFlyerDesignCategoryData categoryData = new GameFlyerDesignCategoryData()
         {
             m_CategoryState = CategoryState.BG,
             m_IconNormalPath = "Category/ico_bg",
             m_IconSelectPath = "Category/ico_bg_xz",
-            m_ItemPrefabsPath = "Prefab/Flower",
+            m_ItemPrefabsPath = "Prefab/Photo",
             m_ItemGridInfo = GetGridInfo("FlyerDesign_BG"),
         };
         m_FlyerDesignCategorys.Add(categoryData);
@@ -125,6 +126,7 @@ public class GameDesignData {
                 m_Id = "huaping_" + i,
                 m_IconPath = "UI/icon_small/icon_small_huaping_00" + i,
                 m_ItemPath = string.Format("UI/icon/huaping_{0:D3}", i),
+                m_Index = i,
             };
             pair.Add(item);
         }
@@ -138,6 +140,17 @@ public class GameDesignData {
                 m_Id = "Flower_" + i,
                 m_IconPath = "UI/icon_small/icon_small_flower_carnation_00" + i,
                 m_ItemPath = string.Format("UI/icon/flower_carnation_{0:D3}", i),
+            };
+            pair.Add(item);
+        }
+
+        for (int i = 1; i < 6; i++)
+        {
+            var item = new GameFlyerDesignItemData()
+            {
+                m_Id = "Flower_1" + i,
+                m_IconPath = "UI/icon_small/icon_small_flower_tulip_00" + i,
+                m_ItemPath = string.Format("UI/icon/flower_tulip_{0:D3}", i),
             };
             pair.Add(item);
         }
@@ -180,5 +193,22 @@ public class GameDesignData {
         return null;
     }
 
-    
+    #region SavaImage
+    public List<string> GameDesignPhotos
+    {
+        get
+        {
+            return m_GameDesignPhotos;
+        }
+    }
+    private List<string> m_GameDesignPhotos = new List<string>();
+
+    public void AddSavePhoto(string path) {
+        PlayerPrefs.SetInt("SaveCount", PlayerPrefs.GetInt("SaveCount", 0)+1);
+        GameDesignPhotos.Add(path);
+    }
+    public int GetCurSavePhoto() {
+        return PlayerPrefs.GetInt("SaveCount",0);
+    }
+    #endregion
 }
