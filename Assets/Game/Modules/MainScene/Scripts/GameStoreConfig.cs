@@ -50,13 +50,13 @@ namespace Game{
             }
 
             m_FlowerpotData = new List<StoreItemData>();
-            for (int i = 1; i < 4; i++)
+            for (int i = 1; i < 5; i++)
             {
                 var item = new StoreItemData()
                 {
                     m_id = i,
                     storeType = StoreType.Flowerpot,
-                    iconPath = "UI/icon_small/icon_small_photo_0" + i,
+                    iconPath = "UI/FlowerPot/huapen_00" + i,
                     itemPath = string.Format("UI/icon/photo_{0:D2}", i),// "UI/icon/",
                     cost = 0,
                 };
