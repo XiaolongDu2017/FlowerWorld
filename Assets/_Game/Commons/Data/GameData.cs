@@ -11,6 +11,8 @@ namespace Game
 
         public int water = 0;
         
+        public int fertilizer = 0;
+        
         public DateTime NextTime;
 
         public int Gold

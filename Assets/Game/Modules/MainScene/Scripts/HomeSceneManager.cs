@@ -14,6 +14,7 @@ namespace Game
         [SerializeField] private Image m_TimerBar;
         [SerializeField] private Text m_TimerText, m_TextGold;
         [SerializeField] private GameObject m_TimeRoot, m_WaterCam, m_UiRoot;
+        [SerializeField] private GameObject m_Fertilizer;
 
         private GameData m_GameData;
 
@@ -176,6 +177,33 @@ namespace Game
                 var animator = m_CurProp.GetComponent<Animator>();
                 if (animator != null)
                     animator.Play("dance");
+            });
+        }
+        
+        public void Applyertilizer()
+        {
+            if (m_GameData.FlowerState == FlowerState.Ripe || m_GameData.FlowerState == FlowerState.Empty) 
+                return;
+
+//            if (m_GameData.fertilizer >= 2)
+//                return;
+
+            m_GameData.fertilizer++;
+//            m_BtnWater.enabled = false;
+            m_Fertilizer.SetActive(true);
+
+            m_GameData.NextTime = m_GameData.NextTime.AddSeconds(-10);
+
+            LeanTween.delayedCall(1.1f, () =>
+            {
+                m_Fertilizer.SetActive(false);
+//                m_BtnWater.enabled = true;
+
+//                var state = (int) m_GameData.FlowerState;
+//                m_CurProp = m_FlowerStates[state];
+//                var animator = m_CurProp.GetComponent<Animator>();
+//                if (animator != null)
+//                    animator.Play("dance");
             });
         }
 
