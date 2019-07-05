@@ -18,5 +18,10 @@
         FlowerStateChange = 3,
 
         ArrangeButtonClick = 4,
+        
+        /// <summary>
+        /// 花盆道具选择
+        /// </summary>
+        FlowerpotStateChange = 5,
     }
 }

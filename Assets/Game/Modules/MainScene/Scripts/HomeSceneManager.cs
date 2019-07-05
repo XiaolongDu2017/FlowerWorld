@@ -7,6 +7,7 @@ namespace Game
     public class HomeSceneManager : SceneManagerBase
     {
         [SerializeField] private GameObject[] m_FlowerStates;
+        [SerializeField] private GameObject[] m_FlowerpotModels;//花盆模型
         [SerializeField] private UINormalButton m_BtnGrow, m_BtnWater;
         [SerializeField] private Image m_TimerBar;
         [SerializeField] private Text m_TimerText, m_TextGold;
@@ -45,16 +46,47 @@ namespace Game
         protected override void AddListeners()
         {
             base.AddListeners();
+	        EventManager.Instance.addEventListener(EventType.FlowerpotStateChange, OnFlowerpotStateChangeHander);
             EventManager.Instance.addEventListener(EventType.FlowerStateChange, OnStateChangeHander);
         }
 
         protected override void RemoveListeners()
         {
             base.RemoveListeners();
+	        EventManager.Instance.removeEventListener(EventType.FlowerpotStateChange, OnFlowerpotStateChangeHander);
             EventManager.Instance.removeEventListener(EventType.FlowerStateChange, OnStateChangeHander);
         }
 
-        private void OnStateChangeHander()
+	    
+	    #region Flowerpot
+	    
+	    //花盆选择
+	    private void OnFlowerpotStateChangeHander()
+	    {
+		    var index = (int) m_GameData.FlowerpotIndex;
+		    for (var i = 0; i < m_FlowerpotModels.Length; i++)
+			    GenerateFlowerpot(m_FlowerpotModels[i], index == i);
+	    }
+
+	    private void GenerateFlowerpot(GameObject obj, bool isActive)
+	    {
+		    if (!isActive)
+		    {
+			    obj.SetActive(false);
+			    return;
+		    }
+
+		    //粒子效果
+		    var particle = Instantiate(Resources.Load<ParticleSystem>("flowerpotParticle"), obj.transform);
+		    particle.transform.SetParent(obj.transform.parent, true);
+		    Destroy(particle.gameObject, 5.0f);
+		    LeanTween.delayedCall(1.0f, () => { obj.SetActive(true); });
+	    }
+
+	    #endregion
+	    
+
+	    private void OnStateChangeHander()
         {
             var state = (int) m_GameData.FlowerState;
             m_TimeRoot.SetActive(m_GameData.FlowerState != FlowerState.Empty && m_GameData.FlowerState != FlowerState.Ripe);

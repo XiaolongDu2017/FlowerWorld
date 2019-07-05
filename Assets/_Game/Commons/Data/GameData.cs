@@ -46,6 +46,12 @@ namespace Game
         }
 
 
+        #region Flowerpot
+
+        public int FlowerpotIndex { get; set; }
+
+        #endregion
+
         public static GameData Instance
         {
             get { return m_Instance ?? (m_Instance = new GameData()); }

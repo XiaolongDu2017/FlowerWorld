@@ -50,11 +50,18 @@ public class StorePopup : PopupViewBase
     private void OnClickItem(int dataIndex)
     {
         GameData.Instance.Gold -= m_ItemDatas[dataIndex].cost;
-        if(m_ItemDatas[dataIndex].storeType == StoreType.Seed) {
+
+        if (m_ItemDatas[dataIndex].storeType == StoreType.Flowerpot)
+        {
+            GameData.Instance.FlowerpotIndex = dataIndex;
+            EventManager.Instance.DispatchEvent(EventType.FlowerpotStateChange);
+        }
+        else if (m_ItemDatas[dataIndex].storeType == StoreType.Seed)
+        {
             GameData.Instance.FlowerState = FlowerState.Seed;
             EventManager.Instance.DispatchEvent(EventType.FlowerStateChange);
-
         }
+
         ClosePopup();
     }
 
