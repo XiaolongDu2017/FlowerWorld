@@ -59,6 +59,7 @@ public class StorePopup : PopupViewBase
         else if (m_ItemDatas[dataIndex].storeType == StoreType.Seed)
         {
             GameData.Instance.FlowerState = FlowerState.Seed;
+            GameData.Instance.FlowerSeedIndex = dataIndex;
             EventManager.Instance.DispatchEvent(EventType.FlowerStateChange);
         }
 

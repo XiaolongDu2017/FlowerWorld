@@ -6,35 +6,33 @@ namespace Game
 {
     public class HomeSceneManager : SceneManagerBase
     {
-        [SerializeField] private GameObject[] m_FlowerStates;
-        [SerializeField] private GameObject[] m_FlowerpotModels;//花盆模型
+        [SerializeField] private GameObject[] m_SunFlowerzStates, m_TulipParentStates;
+        private GameObject[] m_FlowerStates;
+
+        [SerializeField] private GameObject[] m_FlowerpotModels; //花盆模型
         [SerializeField] private UINormalButton m_BtnGrow, m_BtnWater;
         [SerializeField] private Image m_TimerBar;
         [SerializeField] private Text m_TimerText, m_TextGold;
-        [SerializeField] private GameObject m_TimeRoot, m_WaterCam,m_UiRoot;
+        [SerializeField] private GameObject m_TimeRoot, m_WaterCam, m_UiRoot;
 
         private GameData m_GameData;
 
         private GameObject m_CurProp;
 
-		public Text uiText;
+        public Text uiText;
         public string PrefabsPath = "Prefab_StoreItem";
+
         protected override void Start()
         {
             base.Start();
-			uiText.text = "+" + addVaule;
-            m_GameData = GameData.Instance;
-            OnStateChangeHander();
-
-            var mainCamera = Camera.main;
             
-            mainCamera.transform.localPosition = new Vector3(-0.374f,2.345f,7.159f);
-            mainCamera.transform.localEulerAngles = new Vector3(12.3f,130f,0);
-            LeanTween.moveLocal(mainCamera.gameObject, new Vector3(-1.367f, 2.172f, -1.144f), 3f);
-            LeanTween.rotate(mainCamera.gameObject, new Vector3(19f, -90f, 0f), 3f).setOnComplete(() =>
-            {
-                m_UiRoot.SetActive(true);
-            });
+            InitData();
+            
+            InitUi();
+            
+            OnFlowerpotStateChangeHander();
+            
+            OnStateChangeHander();
 
 
 //            if (m_GameData.FlowerState == FlowerState.Empty)
@@ -43,53 +41,79 @@ namespace Game
 //            }
         }
 
+        private void InitData()
+        {
+            m_GameData = GameData.Instance;
+            
+            var mainCamera = Camera.main;
+            mainCamera.transform.localPosition = new Vector3(-0.374f, 2.345f, 7.159f);
+            mainCamera.transform.localEulerAngles = new Vector3(12.3f, 130f, 0);
+            LeanTween.moveLocal(mainCamera.gameObject, new Vector3(-1.367f, 2.172f, -1.144f), 3f);
+            LeanTween.rotate(mainCamera.gameObject, new Vector3(19f, -90f, 0f), 3f)
+                .setOnComplete(() => { m_UiRoot.SetActive(true); });
+        }
+
+        private void InitUi()
+        {
+            uiText.text = "+" + addVaule;
+        }
+
         protected override void AddListeners()
         {
             base.AddListeners();
-	        EventManager.Instance.addEventListener(EventType.FlowerpotStateChange, OnFlowerpotStateChangeHander);
+            EventManager.Instance.addEventListener(EventType.FlowerpotStateChange, OnFlowerpotStateChangeHander);
             EventManager.Instance.addEventListener(EventType.FlowerStateChange, OnStateChangeHander);
         }
 
         protected override void RemoveListeners()
         {
             base.RemoveListeners();
-	        EventManager.Instance.removeEventListener(EventType.FlowerpotStateChange, OnFlowerpotStateChangeHander);
+            EventManager.Instance.removeEventListener(EventType.FlowerpotStateChange, OnFlowerpotStateChangeHander);
             EventManager.Instance.removeEventListener(EventType.FlowerStateChange, OnStateChangeHander);
         }
 
-	    
-	    #region Flowerpot
-	    
-	    //花盆选择
-	    private void OnFlowerpotStateChangeHander()
-	    {
-		    var index = (int) m_GameData.FlowerpotIndex;
-		    for (var i = 0; i < m_FlowerpotModels.Length; i++)
-			    GenerateFlowerpot(m_FlowerpotModels[i], index == i);
-	    }
 
-	    private void GenerateFlowerpot(GameObject obj, bool isActive)
-	    {
-		    if (!isActive)
-		    {
-			    obj.SetActive(false);
-			    return;
-		    }
+        #region Flowerpot
 
-		    //粒子效果
-		    var particle = Instantiate(Resources.Load<ParticleSystem>("flowerpotParticle"), obj.transform);
-		    particle.transform.SetParent(obj.transform.parent, true);
-		    Destroy(particle.gameObject, 5.0f);
-		    LeanTween.delayedCall(1.0f, () => { obj.SetActive(true); });
-	    }
-
-	    #endregion
-	    
-
-	    private void OnStateChangeHander()
+        //花盆选择
+        private void OnFlowerpotStateChangeHander()
         {
+            if (m_GameData.FlowerpotIndex == -1)
+                return;
+
+            var index = m_GameData.FlowerpotIndex;
+            for (var i = 0; i < m_FlowerpotModels.Length; i++)
+                GenerateFlowerpot(m_FlowerpotModels[i], index == i);
+        }
+
+        private void GenerateFlowerpot(GameObject obj, bool isActive)
+        {
+            if (!isActive)
+            {
+                obj.SetActive(false);
+                return;
+            }
+
+            //粒子效果
+            var particle = Instantiate(Resources.Load<ParticleSystem>("flowerpotParticle"), obj.transform);
+            particle.transform.SetParent(obj.transform.parent, true);
+            Destroy(particle.gameObject, 5.0f);
+            LeanTween.delayedCall(1.0f, () => { obj.SetActive(true); });
+        }
+
+        #endregion
+
+
+        #region Flower State
+
+        //花的周期状态
+        private void OnStateChangeHander()
+        {
+            UpdateFlowerModel();
+            
             var state = (int) m_GameData.FlowerState;
-            m_TimeRoot.SetActive(m_GameData.FlowerState != FlowerState.Empty && m_GameData.FlowerState != FlowerState.Ripe);
+            m_TimeRoot.SetActive(m_GameData.FlowerState != FlowerState.Empty &&
+                                 m_GameData.FlowerState != FlowerState.Ripe);
 
             for (int i = 0; i < m_FlowerStates.Length; i++)
             {
@@ -98,6 +122,21 @@ namespace Game
 
             m_TextGold.text = "" + m_GameData.Gold;
         }
+
+        //确定花的种类
+        private void UpdateFlowerModel()
+        {
+            var index = m_GameData.FlowerSeedIndex;
+            
+            m_FlowerStates = m_SunFlowerzStates;
+            
+            if (index == 1)
+                m_FlowerStates = m_TulipParentStates;
+
+            Debug.LogError("现在的花是：" + m_FlowerStates[1].name);
+        }
+
+        #endregion
 
 
         public void OnClickStore()
@@ -147,22 +186,22 @@ namespace Game
             OnStateChangeHander();
         }
 
-		public void OnClickFlower()
-		{
-			if (m_GameData.FlowerState == FlowerState.Ripe)
-			{
-				m_GameData.FlowerState = FlowerState.Empty;
-				for (int i = 0; i < m_FlowerStates.Length; i++)
-				{
-					m_FlowerStates[i].SetActive(false);
-				}
-			}
-			else
-			{
-				
-				AddGold();
-			}
-		}
+        public void OnClickFlower()
+        {
+            if (m_GameData.FlowerState == FlowerState.Ripe)
+            {
+                m_GameData.FlowerState = FlowerState.Empty;
+                for (int i = 0; i < m_FlowerStates.Length; i++)
+                {
+                    m_FlowerStates[i].SetActive(false);
+                }
+            }
+            else
+            {
+                AddGold();
+            }
+        }
+
         public void OnClickFlowerpot()
         {
             if (m_GameData.FlowerState == FlowerState.Empty || m_GameData.FlowerState == FlowerState.None)
@@ -170,8 +209,8 @@ namespace Game
                 Debug.LogError("OnClickFlowerpot");
                 StorePopup.Create(PrefabsPath, StoreType.Flowerpot);
             }
-           
         }
+
         public void OnClickSeed()
         {
             if (m_GameData.FlowerState == FlowerState.Empty || m_GameData.FlowerState == FlowerState.None)
@@ -179,8 +218,8 @@ namespace Game
                 Debug.LogError("OnClickSeed");
                 StorePopup.Create(PrefabsPath, StoreType.Seed);
             }
-
         }
+
         public override bool HandleBackButtonPress()
         {
             BackButtonService.Instace.DefaultBackButtonAction();
@@ -190,23 +229,23 @@ namespace Game
 
         private void Update()
         {
-			if (!uiText.gameObject.activeSelf || uiText.gameObject.GetComponent<CanvasGroup>().alpha <= 0)
-			{
-				if (m_GameData.FlowerState == FlowerState.Empty)
-					return;
-				//Debug.LogError("22");
-				uiText.gameObject.SetActive(true);
-				uiText.gameObject.GetComponent<CanvasGroup>().alpha = 1;
-				uiText.transform.localPosition = new Vector3(36f, -350f, 0);
-				LeanTween.moveLocalY(uiText.gameObject, 94, 1f);
-				LeanTween.alphaCanvas(uiText.gameObject.GetComponent<CanvasGroup>(), 0, 1f).setOnComplete(() => { 
-					 m_GameData.NextTime = m_GameData.NextTime.AddSeconds(addVaule*-1);
-				});
-			}
+            if (!uiText.gameObject.activeSelf || uiText.gameObject.GetComponent<CanvasGroup>().alpha <= 0)
+            {
+                if (m_GameData.FlowerState == FlowerState.Empty)
+                    return;
+                //Debug.LogError("22");
+                uiText.gameObject.SetActive(true);
+                uiText.gameObject.GetComponent<CanvasGroup>().alpha = 1;
+                uiText.transform.localPosition = new Vector3(36f, -350f, 0);
+                LeanTween.moveLocalY(uiText.gameObject, 94, 1f);
+                LeanTween.alphaCanvas(uiText.gameObject.GetComponent<CanvasGroup>(), 0, 1f).setOnComplete(() =>
+                {
+                    m_GameData.NextTime = m_GameData.NextTime.AddSeconds(addVaule * -1);
+                });
+            }
 
             if (!m_TimeRoot.activeSelf) return;
 
-		
 
             var timeSpan = m_GameData.NextTime - DateTime.Now;
             var curVal = 1 - (float) timeSpan.TotalSeconds / GameData.PreStateSec;
@@ -232,26 +271,27 @@ namespace Game
         }
 
 
-		private float intervalTime = 1;
-		public int addVaule = 5;
-		private void AddGold()
-		{
-			if (m_GameData.FlowerState == FlowerState.Empty)
-				return;
-			if (m_GameData.FlowerState == FlowerState.Ripe)
-				return;
-			GameObject tempText = Instantiate(uiText.gameObject) as GameObject;
-			tempText.transform.SetParent(uiText.transform.parent);
-			tempText.transform.localScale = Vector3.one;
-			tempText.transform.localPosition = new Vector3(36f, -350f, 0);
-			tempText.gameObject.GetComponent<CanvasGroup>().alpha = 1;
-			tempText.gameObject.SetActive(true);
-			LeanTween.moveLocalY(tempText.gameObject, 94, 1f);
-			LeanTween.alphaCanvas(tempText.gameObject.GetComponent<CanvasGroup>(), 0, 1f).setOnComplete(() => {
-				m_GameData.NextTime = m_GameData.NextTime.AddSeconds(addVaule * -1);
-				Destroy(tempText);
-			});
+        private float intervalTime = 1;
+        public int addVaule = 5;
 
-		}
+        private void AddGold()
+        {
+            if (m_GameData.FlowerState == FlowerState.Empty)
+                return;
+            if (m_GameData.FlowerState == FlowerState.Ripe)
+                return;
+            GameObject tempText = Instantiate(uiText.gameObject) as GameObject;
+            tempText.transform.SetParent(uiText.transform.parent);
+            tempText.transform.localScale = Vector3.one;
+            tempText.transform.localPosition = new Vector3(36f, -350f, 0);
+            tempText.gameObject.GetComponent<CanvasGroup>().alpha = 1;
+            tempText.gameObject.SetActive(true);
+            LeanTween.moveLocalY(tempText.gameObject, 94, 1f);
+            LeanTween.alphaCanvas(tempText.gameObject.GetComponent<CanvasGroup>(), 0, 1f).setOnComplete(() =>
+            {
+                m_GameData.NextTime = m_GameData.NextTime.AddSeconds(addVaule * -1);
+                Destroy(tempText);
+            });
+        }
     }
 }

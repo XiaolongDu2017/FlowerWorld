@@ -48,7 +48,19 @@ namespace Game
 
         #region Flowerpot
 
-        public int FlowerpotIndex { get; set; }
+        //花盆种类索引
+        public int FlowerpotIndex
+        {
+            get { return PlayerPrefs.GetInt("FlowerpotIndex", -1); }
+            set { PlayerPrefs.SetInt("FlowerpotIndex", value); }
+        }
+        
+        //花种种类索引
+        public int FlowerSeedIndex
+        {
+            get { return PlayerPrefs.GetInt("FlowerSeedIndex", -1); }
+            set { PlayerPrefs.SetInt("FlowerSeedIndex", value); }
+        }
 
         #endregion
 
