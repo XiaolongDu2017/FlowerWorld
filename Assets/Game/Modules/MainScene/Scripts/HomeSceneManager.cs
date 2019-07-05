@@ -6,7 +6,7 @@ namespace Game
 {
     public class HomeSceneManager : SceneManagerBase
     {
-        [SerializeField] private GameObject[] m_SunFlowerzStates, m_TulipParentStates;
+        [SerializeField] private GameObject[] m_SunFlowerzStates, m_TulipParentStates, m_CarnationParentStates;
         private GameObject[] m_FlowerStates;
 
         [SerializeField] private GameObject[] m_FlowerpotModels; //花盆模型
@@ -98,7 +98,7 @@ namespace Game
             var particle = Instantiate(Resources.Load<ParticleSystem>("flowerpotParticle"), obj.transform);
             particle.transform.SetParent(obj.transform.parent, true);
             Destroy(particle.gameObject, 5.0f);
-            LeanTween.delayedCall(1.0f, () => { obj.SetActive(true); });
+            LeanTween.delayedCall(0.2f, () => { obj.SetActive(true); });
         }
 
         #endregion
@@ -131,6 +131,8 @@ namespace Game
             m_FlowerStates = m_SunFlowerzStates;
             
             if (index == 1)
+                m_FlowerStates = m_CarnationParentStates;
+            else if (index == 2)
                 m_FlowerStates = m_TulipParentStates;
 
             Debug.LogError("现在的花是：" + m_FlowerStates[1].name);
