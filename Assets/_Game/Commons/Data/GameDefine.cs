@@ -23,12 +23,6 @@
     {
     }
 
-    public class GameDesignFlowerConfig{
-        public int id;
-        public string smallIcon;
-        public string bigIcon;
-        public int[] unlockID;
-    }
-    
+   
     
 }

@@ -17,7 +17,7 @@ namespace Game
         private GameObject m_CurProp;
 
 		public Text uiText;
-
+        public string PrefabsPath = "Prefab_StoreItem";
         protected override void Start()
         {
             base.Start();
@@ -131,7 +131,24 @@ namespace Game
 				AddGold();
 			}
 		}
+        public void OnClickFlowerpot()
+        {
+            if (m_GameData.FlowerState == FlowerState.Empty || m_GameData.FlowerState == FlowerState.None)
+            {
+                Debug.LogError("OnClickFlowerpot");
+                StorePopup.Create(PrefabsPath, StoreType.Flowerpot);
+            }
+           
+        }
+        public void OnClickSeed()
+        {
+            if (m_GameData.FlowerState == FlowerState.Empty || m_GameData.FlowerState == FlowerState.None)
+            {
+                Debug.LogError("OnClickSeed");
+                StorePopup.Create(PrefabsPath, StoreType.Seed);
+            }
 
+        }
         public override bool HandleBackButtonPress()
         {
             BackButtonService.Instace.DefaultBackButtonAction();
