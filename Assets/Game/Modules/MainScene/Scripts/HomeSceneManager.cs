@@ -6,11 +6,14 @@ namespace Game
 {
     public class HomeSceneManager : SceneManagerBase
     {
+        [SerializeField] private Camera m_UiCamera;
+        
         [SerializeField] private GameObject[] m_SunFlowerzStates, m_TulipParentStates, m_CarnationParentStates;
         private GameObject[] m_FlowerStates;
 
         [SerializeField] private GameObject[] m_FlowerpotModels; //花盆模型
         [SerializeField] private UINormalButton m_BtnGrow, m_BtnWater;
+        [SerializeField] private UINormalButton m_BtnStore;
         [SerializeField] private Image m_TimerBar;
         [SerializeField] private Text m_TimerText, m_TextGold;
         [SerializeField] private GameObject m_TimeRoot, m_WaterCam, m_UiRoot;
@@ -185,19 +188,14 @@ namespace Game
             if (m_GameData.FlowerState == FlowerState.Ripe || m_GameData.FlowerState == FlowerState.Empty) 
                 return;
 
-//            if (m_GameData.fertilizer >= 2)
-//                return;
+            if (m_GameData.fertilizer >= 1)
+                return;
 
             m_GameData.fertilizer++;
-//            m_BtnWater.enabled = false;
             m_Fertilizer.SetActive(true);
-
             m_GameData.NextTime = m_GameData.NextTime.AddSeconds(-10);
 
-            LeanTween.delayedCall(1.1f, () =>
-            {
-                m_Fertilizer.SetActive(false);
-            });
+            LeanTween.delayedCall(1.1f, () => { m_Fertilizer.SetActive(false); });
         }
 
         public void OnClickGrow()
@@ -213,17 +211,32 @@ namespace Game
         {
             if (m_GameData.FlowerState == FlowerState.Ripe)
             {
-                m_GameData.FlowerState = FlowerState.Empty;
-                for (int i = 0; i < m_FlowerStates.Length; i++)
-                {
-                    m_FlowerStates[i].SetActive(false);
-                }
             }
             else
             {
                 AddGold();
             }
         }
+
+
+        #region Harvesting Flower
+
+        [SerializeField] private Transform _harvestPos;
+
+        //成熟后收获
+        public void HarvestingFlower()
+        {
+            if (m_GameData.FlowerState == FlowerState.Ripe)
+            {
+//                m_GameData.FlowerState = FlowerState.Empty;
+                var flyObj = m_FlowerStates[5].transform.parent.gameObject;
+                LeanTween.moveLocal(flyObj, _harvestPos.position, 1.0f);
+                LeanTween.scale(flyObj, Vector3.zero, 1.0f);
+            }
+        }
+
+        #endregion
+        
 
         public void OnClickFlowerpot()
         {

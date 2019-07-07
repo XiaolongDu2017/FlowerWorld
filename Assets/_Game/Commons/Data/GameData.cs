@@ -32,6 +32,7 @@ namespace Game
                 {
                     NextTime = DateTime.Now.AddSeconds(PreStateSec);
                     water = 0;
+                    fertilizer = 0;
                 }
 
                 PlayerPrefs.SetInt("FlowerState", (int) m_FlowerState);
