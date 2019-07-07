@@ -197,13 +197,6 @@ namespace Game
             LeanTween.delayedCall(1.1f, () =>
             {
                 m_Fertilizer.SetActive(false);
-//                m_BtnWater.enabled = true;
-
-//                var state = (int) m_GameData.FlowerState;
-//                m_CurProp = m_FlowerStates[state];
-//                var animator = m_CurProp.GetComponent<Animator>();
-//                if (animator != null)
-//                    animator.Play("dance");
             });
         }
 
