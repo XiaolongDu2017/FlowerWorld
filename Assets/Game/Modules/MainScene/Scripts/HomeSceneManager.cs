@@ -168,7 +168,7 @@ namespace Game
             m_BtnWater.enabled = false;
             m_WaterCam.SetActive(true);
 
-            m_GameData.NextTime = m_GameData.NextTime.AddSeconds(-10);
+            m_GameData.NextTime = m_GameData.NextTime.AddSeconds(-60);
 
             LeanTween.delayedCall(1.1f, () =>
             {
@@ -193,7 +193,7 @@ namespace Game
 
             m_GameData.fertilizer++;
             m_Fertilizer.SetActive(true);
-            m_GameData.NextTime = m_GameData.NextTime.AddSeconds(-10);
+            m_GameData.NextTime = m_GameData.NextTime.AddSeconds(-60);
 
             LeanTween.delayedCall(1.1f, () => { m_Fertilizer.SetActive(false); });
         }
@@ -228,10 +228,15 @@ namespace Game
         {
             if (m_GameData.FlowerState == FlowerState.Ripe)
             {
-//                m_GameData.FlowerState = FlowerState.Empty;
+                m_GameData.FlowerState = FlowerState.Empty;
                 var flyObj = m_FlowerStates[5].transform.parent.gameObject;
+                var origionPos = flyObj.transform.position;
                 LeanTween.moveLocal(flyObj, _harvestPos.position, 1.0f);
-                LeanTween.scale(flyObj, Vector3.zero, 1.0f);
+                LeanTween.scale(flyObj, Vector3.zero, 1.0f).setOnComplete(() =>
+                {
+                    m_FlowerStates[5].gameObject.SetActive(false);
+                    flyObj.transform.position = origionPos;
+                });
             }
         }
 
